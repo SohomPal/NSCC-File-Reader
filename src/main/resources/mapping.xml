@@ -1,0 +1,120 @@
+<beanio xmlns="http://www.beanio.org/2012/03">
+
+
+    <!-- 'format' identifies the type of stream -->
+
+    <stream name="NSCC" format="fixedlength" ignoreUnidentifiedRecords="true">
+
+        <record name="Header" class="org.sohom.ETF" minOccurs="1">
+            <!-- 'rid' indicates this field is used to identify the record -->
+            <field name= "recordType" rid="true" position = "0" length = "2" literal="02" />
+            <field name= "CUSIP" position = "2" length = "9" type = "String" />
+            <field name= "ISIN" position = "11" length = "12" type = "String" />
+            <field name= "NSCCPortfolioID" position = "23" length = "9" type = "String" />
+            <field name= "Description" position = "32" length = "60" type = "String" />
+            <field name= "TradeDate" position = "92" length = "8" type = "Date" format = "yyyyMMdd" />
+            <field name= "ETFAgent" position = "100" length = "8" type = "String" />
+            <field name= "ComponentCount" position = "108" length = "8" type = "int" />
+            <field name= "EstCashAmountPerCreationTminus1" position = "116" length = "14" type = "long" />
+            <field name= "SignForEstCashAmountPerCreationTminus1" position = "130" length = "1" type = "String" />
+            <field name= "NetAssetValuePerCreationUnit" position = "131" length = "18" type = "BigDecimal" />
+            <field name= "SignForNetAssetValuePerCreationUnit" position = "149" length = "1" type = "String" />
+            <field name= "EstimatedCashAmountPerETFT_1" position = "150" length = "14" type = "long" />
+            <field name= "SignForEstimatedCashAmountPerETFT_1" position = "164" length = "1" type = "String" />
+            <field name= "NetAssetValuePerETF" position = "165" length = "18" type = "BigDecimal" />
+            <field name= "SignForNetAssetValuePerETF" position = "183" length = "1" type = "String" />
+            <field name= "TotalCashAmountPerCreationUnit" position = "184" length = "14" type = "long" />
+            <field name= "SignForTotalCashAmountPerCreationUnit" position = "198" length = "1" type = "String" />
+            <field name= "TotalSharesOutstandingPerETF" position = "199" length = "12" type = "long" />
+            <field name= "DividendAmountPerETFT_1" position = "211" length = "14" type = "long" />
+            <field name= "SignForDividendAmountPerETFT_1" position = "225" length = "1" type = "String" />
+            <field name= "EstValueCashInLieuComponentsPerCreationUnit" position = "226" length = "14" type = "long" />
+            <field name= "CashOnlyIndicator" position = "240" length = "1" type = "String" />
+            <field name= "ETFExpenseRatioOnT_1" position = "241" length = "3" type = "int" />
+            <field name= "TotalNetAssetValueETFFundT_1" position = "244" length = "18" type = "BigDecimal" />
+            <field name= "ETFSharesPerCreateRedeemUnit" position = "262" length = "9" type = "int" />
+            <field name= "ETFSymbol" position = "271" length = "15" type = "String" />
+            <field name= "CNSEligibilityIndicator" position = "286" length = "1" type = "String" />
+            <field name= "ETFCreateRedeemIdentifier" position = "287" length = "1" type = "String" />
+            <field name= "PriorDayPortfolioBeingUsed" position = "288" length = "1" type = "String" />
+            <field name= "BasketType" position = "289" length = "2" type = "int" />
+            <field name= "ForeignOrDomestic" position = "291" length = "1" type = "String" />
+            <field name= "NSCCNewPortfolio" position = "292" length = "1" type = "String" />
+            <field name= "ETFClassificationCode" position = "293" length = "6" type = "String" />
+            <field name= "ETFBasketUnitSize" position = "299" length = "9" type = "int" />
+            <field name= "VariableFees" position = "308" length = "8" type = "int" />
+            <field name= "BabyBondCashValue" position = "316" length = "10" type = "long" />
+            <field name= "FixedIncomeFaceValueAdjustment" position = "326" length = "10" type = "long" />
+            <field name= "AssetClassificationCodeUnderlyingComponents" position = "336" length = "2" type = "int" />
+            <field name= "LeverageIndicatorCode" position = "338" length = "2" type = "int" />
+            <field name= "LeverageFactor" position = "340" length = "4" type = "int" />
+            <field name= "TransferAgentID" position = "344" length = "8" type = "int" />
+            <field name= "TransferAgentName" position = "352" length = "48" type = "String" />
+            <field name= "FundLEI" position = "400" length = "20" type = "String" />
+            <field name= "FundSize" position = "420" length = "23" type = "BigDecimal" />
+            <field name= "ShareClassApportionmentRatio" position = "443" length = "1" type = "int" />
+            <field name= "ProjectedTransactionFee" position = "444" length = "7" type = "int" />
+            <field name= "DateForProjectedTransactionFee" position = "451" length = "8" type = "Date" />
+            <field name= "ConfirmedTransactionFee" position = "459" length = "7" type = "int" />
+            <field name= "DateForConfirmedTransactionFee" position = "466" length = "8" type = "Date" />
+            <field name= "ProjectedCashForPricingBasket" position = "474" length = "14" type = "long" />
+            <field name= "BasketsOutstanding" position = "488" length = "6" type = "int" />
+            <field name= "PricingUsageIndicator" position = "494" length = "1" type = "String" />
+            <field name= "CreationOrderUsage" position = "495" length = "1" type = "String" />
+            <field name= "RedemptionOrderUsage" position = "496" length = "1" type = "String" />
+            <field name= "FutureUse" position = "497" length = "3" type = "String" />
+
+
+        </record>
+
+
+        <record name="ETFComponents" class="org.sohom.ETFConstituents">
+
+            <field name= "recordType" rid="true" position = "0" length = "2" literal="03" />
+            <field name="CUSIP" position = "2" length = "9" type = "String" />
+            <field name="ISIN" position = "11" length = "12" type = "String" />
+            <field name="NSCCPortfolioID" position = "23" length = "9" type = "String" />
+            <field name="PortfolioTradeDate" position = "32" length = "8" type = "Date" />
+            <field name="ComponentIDCode" position = "40" length = "2" type = "int" />
+            <field name="ComponentID" position = "42" length = "25" type = "String" />
+            <field name="ComponentQuantity" position = "67" length = "21" type = "BigDecimal" />
+            <field name="SignForComponentQuantity" position = "88" length = "1" type = "String" />
+            <field name="NewSecurityIndicator" position = "89" length = "1" type = "String" />
+            <field name= "CashInLieuIndicator" position = "90" length = "1" type = "String" />
+            <field name="ComponentSymbol" position = "91" length = "15" type = "String" />
+            <field name="ComponentWIIndicator" position = "106" length = "1" type = "String" />
+            <field name="ComponentUndergoingCorporateAction" position = "107" length = "1" type = "String" />
+            <field name="SettlementLocation" position = "108" length = "1" type = "int" />
+            <field name="ComponentCNSIndicator" position = "109" length = "1" type = "String" />
+            <field name="ExternalSettlementDate" position = "110" length = "8" type = "Date" />
+            <field name="ComponentDescription" position = "118" length = "60" type = "String" />
+            <field name="WhenIssuedIndicator" position = "178" length = "1" type = "String" />
+            <field name="AccruedInterestNonstandardSettlement" position = "179" length = "11" type = "long" />
+            <field name="AccruedInterestStandardSettlement" position = "190" length = "11" type = "long" />
+            <field name="AssetClass" position = "201" length = "27" type = "String" />
+            <field name="ExcludedFromPricing" position = "228" length = "21" type = "BigDecimal" />
+            <field name="Price" position = "249" length = "24" type = "BigDecimal" />
+            <field name="LocalCurrency" position = "273" length = "3" type = "String" />
+            <field name="Factor" position = "276" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsLocalCurrency" position = "300" length = "3" type = "String" />
+            <field name="SyntheticsPriceMultiplier" position = "303" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsContractSize" position = "327" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsAverageContractOpenPrice" position = "351" length = "24" type = "BigDecimal" />
+            <field name="FXRatesBaseCurrency" position = "375" length = "3" type = "String" />
+            <field name="FXRatesCurrencies" position = "378" length = "3" type = "String" />
+            <field name="FXForwardsCurrencyPair" position = "381" length = "6" type = "String" />
+            <field name="FXForwardsValueDate" position = "387" length = "8" type = "Date" />
+            <field name="FXForwardsQuantity" position = "395" length = "9" type = "int" />
+            <field name="FXForwardsRate" position = "404" length = "7" type = "int" />
+            <field name="FXForwardsValue" position = "411" length = "9" type = "int" />
+
+            <field name="FXForwardsCurrency" position = "420" length = "3" type = "String" />
+            <field name="SWAPsNotionalValue" position = "423" length = "7" type = "int" />
+            <field name="SWAPsSpread" position = "430" length = "5" type = "int" />
+            <field name="SWAPsMarketValue" position = "435" length = "9" type = "int" />
+            <field name="FutureUse" position = "444" length = "56" type = "String" />
+
+        </record>
+
+    </stream>
+</beanio>
