@@ -1,4 +1,4 @@
-package org.sohom;
+package org.sohom.beans;
 
 import java.math.BigDecimal;
 import java.util.Date;

@@ -5,7 +5,7 @@
 
     <stream name="NSCC" format="fixedlength" ignoreUnidentifiedRecords="true">
 
-        <record name="Header" class="org.sohom.ETF" minOccurs="1">
+        <record name="Header" class="org.sohom.beans.ETF" minOccurs="1">
             <!-- 'rid' indicates this field is used to identify the record -->
             <field name= "recordType" rid="true" position = "0" length = "2" literal="02" />
             <field name= "CUSIP" position = "2" length = "9" type = "String" />
@@ -54,9 +54,9 @@
             <field name= "FundSize" position = "420" length = "23" type = "BigDecimal" />
             <field name= "ShareClassApportionmentRatio" position = "443" length = "1" type = "int" />
             <field name= "ProjectedTransactionFee" position = "444" length = "7" type = "int" />
-            <field name= "DateForProjectedTransactionFee" position = "451" length = "8" type = "Date" />
+            <field name= "DateForProjectedTransactionFee" position = "451" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name= "ConfirmedTransactionFee" position = "459" length = "7" type = "int" />
-            <field name= "DateForConfirmedTransactionFee" position = "466" length = "8" type = "Date" />
+            <field name= "DateForConfirmedTransactionFee" position = "466" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name= "ProjectedCashForPricingBasket" position = "474" length = "14" type = "long" />
             <field name= "BasketsOutstanding" position = "488" length = "6" type = "int" />
             <field name= "PricingUsageIndicator" position = "494" length = "1" type = "String" />
@@ -68,13 +68,13 @@
         </record>
 
 
-        <record name="ETFComponents" class="org.sohom.ETFConstituents">
+        <record name="ETFComponents" class="org.sohom.beans.ETFConstituents">
 
             <field name= "recordType" rid="true" position = "0" length = "2" literal="03" />
             <field name="CUSIP" position = "2" length = "9" type = "String" />
             <field name="ISIN" position = "11" length = "12" type = "String" />
             <field name="NSCCPortfolioID" position = "23" length = "9" type = "String" />
-            <field name="PortfolioTradeDate" position = "32" length = "8" type = "Date" />
+            <field name="PortfolioTradeDate" position = "32" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name="ComponentIDCode" position = "40" length = "2" type = "int" />
             <field name="ComponentID" position = "42" length = "25" type = "String" />
             <field name="ComponentQuantity" position = "67" length = "21" type = "BigDecimal" />
@@ -86,7 +86,7 @@
             <field name="ComponentUndergoingCorporateAction" position = "107" length = "1" type = "String" />
             <field name="SettlementLocation" position = "108" length = "1" type = "int" />
             <field name="ComponentCNSIndicator" position = "109" length = "1" type = "String" />
-            <field name="ExternalSettlementDate" position = "110" length = "8" type = "Date" />
+            <field name="ExternalSettlementDate" position = "110" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name="ComponentDescription" position = "118" length = "60" type = "String" />
             <field name="WhenIssuedIndicator" position = "178" length = "1" type = "String" />
             <field name="AccruedInterestNonstandardSettlement" position = "179" length = "11" type = "long" />
@@ -103,11 +103,10 @@
             <field name="FXRatesBaseCurrency" position = "375" length = "3" type = "String" />
             <field name="FXRatesCurrencies" position = "378" length = "3" type = "String" />
             <field name="FXForwardsCurrencyPair" position = "381" length = "6" type = "String" />
-            <field name="FXForwardsValueDate" position = "387" length = "8" type = "Date" />
+            <field name="FXForwardsValueDate" position = "387" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name="FXForwardsQuantity" position = "395" length = "9" type = "int" />
             <field name="FXForwardsRate" position = "404" length = "7" type = "int" />
             <field name="FXForwardsValue" position = "411" length = "9" type = "int" />
-
             <field name="FXForwardsCurrency" position = "420" length = "3" type = "String" />
             <field name="SWAPsNotionalValue" position = "423" length = "7" type = "int" />
             <field name="SWAPsSpread" position = "430" length = "5" type = "int" />
