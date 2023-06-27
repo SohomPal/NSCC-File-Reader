@@ -62,7 +62,7 @@
             <field name= "PricingUsageIndicator" position = "494" length = "1" type = "String" />
             <field name= "CreationOrderUsage" position = "495" length = "1" type = "String" />
             <field name= "RedemptionOrderUsage" position = "496" length = "1" type = "String" />
-            <field name= "FutureUse" position = "497" length = "3" type = "String" />
+            <field name= "FutureUse" position = "497" length = "3" type = "String" minOccurs="0"/>
 
 
         </record>
@@ -88,30 +88,32 @@
             <field name="ComponentCNSIndicator" position = "109" length = "1" type = "String" />
             <field name="ExternalSettlementDate" position = "110" length = "8" type = "Date" format = "yyyyMMdd" />
             <field name="ComponentDescription" position = "118" length = "60" type = "String" />
-            <field name="WhenIssuedIndicator" position = "178" length = "1" type = "String" />
-            <field name="AccruedInterestNonstandardSettlement" position = "179" length = "11" type = "long" />
-            <field name="AccruedInterestStandardSettlement" position = "190" length = "11" type = "long" />
-            <field name="AssetClass" position = "201" length = "27" type = "String" />
-            <field name="ExcludedFromPricing" position = "228" length = "21" type = "BigDecimal" />
-            <field name="Price" position = "249" length = "24" type = "BigDecimal" />
-            <field name="LocalCurrency" position = "273" length = "3" type = "String" />
-            <field name="Factor" position = "276" length = "24" type = "BigDecimal" />
-            <field name="SyntheticsLocalCurrency" position = "300" length = "3" type = "String" />
-            <field name="SyntheticsPriceMultiplier" position = "303" length = "24" type = "BigDecimal" />
-            <field name="SyntheticsContractSize" position = "327" length = "24" type = "BigDecimal" />
-            <field name="SyntheticsAverageContractOpenPrice" position = "351" length = "24" type = "BigDecimal" />
-            <field name="FXRatesBaseCurrency" position = "375" length = "3" type = "String" />
-            <field name="FXRatesCurrencies" position = "378" length = "3" type = "String" />
-            <field name="FXForwardsCurrencyPair" position = "381" length = "6" type = "String" />
-            <field name="FXForwardsValueDate" position = "387" length = "8" type = "Date" format = "yyyyMMdd" />
-            <field name="FXForwardsQuantity" position = "395" length = "9" type = "int" />
-            <field name="FXForwardsRate" position = "404" length = "7" type = "int" />
-            <field name="FXForwardsValue" position = "411" length = "9" type = "int" />
-            <field name="FXForwardsCurrency" position = "420" length = "3" type = "String" />
-            <field name="SWAPsNotionalValue" position = "423" length = "7" type = "int" />
-            <field name="SWAPsSpread" position = "430" length = "5" type = "int" />
-            <field name="SWAPsMarketValue" position = "435" length = "9" type = "int" />
-            <field name="FutureUse" position = "444" length = "56" type = "String" />
+            <field name="ComponentPriceAmount" position = "178" length = "16" type = "long" />
+            <field name="SecurityIssueType" position = "194" length = "1" type = "String" />
+            <field name="WhenIssuedIndicator" position = "195" length = "1" type = "String" />
+            <field name="AccruedInterestNonstandardSettlement" position = "196" length = "11" type = "long" />
+            <field name="AccruedInterestStandardSettlement" position = "207" length = "11" type = "long" />
+            <field name="AssetClass" position = "218" length = "27" type = "String" />
+            <field name="ExcludedFromPricing" position = "245" length = "21" type = "BigDecimal" />
+            <field name="Price" position = "266" length = "24" type = "BigDecimal" />
+            <field name="LocalCurrency" position = "290" length = "3" type = "String" />
+            <field name="Factor" position = "293" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsLocalCurrency" position = "317" length = "3" type = "String" />
+            <field name="SyntheticsPriceMultiplier" position = "320" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsContractSize" position = "344" length = "24" type = "BigDecimal" />
+            <field name="SyntheticsAverageContractOpenPrice" position = "368" length = "24" type = "BigDecimal" />
+            <field name="FXRatesBaseCurrency" position = "392" length = "3" type = "String" />
+            <field name="FXRatesCurrencies" position = "395" length = "3" type = "String" />
+            <field name="FXForwardsCurrencyPair" position = "398" length = "6" type = "String" />
+            <field name="FXForwardsValueDate" position = "404" length = "8" type = "Date" format = "yyyyMMdd" />
+            <field name="FXForwardsQuantity" position = "412" length = "9" type = "int" />
+            <field name="FXForwardsRate" position = "421" length = "7" type = "int" />
+            <field name="FXForwardsValue" position = "428" length = "9" type = "int" />
+            <field name="FXForwardsCurrency" position = "437" length = "3" type = "String" />
+            <field name="SWAPsNotionalValue" position = "440" length = "7" type = "int" />
+            <field name="SWAPsSpread" position = "447" length = "5" type = "int" />
+            <field name="SWAPsMarketValue" position = "452" length = "9" type = "int" />
+            <field name="FutureUse" position = "461" length = "56" type = "String" minOccurs="0"/>
 
         </record>
 

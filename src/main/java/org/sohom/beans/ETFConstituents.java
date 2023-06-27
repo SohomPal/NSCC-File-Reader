@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class ETFConstituents {
 
+    String recordType;
     String CUSIP;
     String ISIN;
     String NSCCPortfolioID;
@@ -22,6 +23,8 @@ public class ETFConstituents {
     String ComponentCNSIndicator;
     Date ExternalSettlementDate;
     String ComponentDescription;
+    long ComponentPriceAmount;
+    String SecurityIssueType;
     String WhenIssuedIndicator;
     long AccruedInterestNonstandardSettlement;
     long AccruedInterestStandardSettlement;
@@ -47,6 +50,14 @@ public class ETFConstituents {
     int SWAPsMarketValue;
     String FutureUse;
 
+
+    public String getRecordType() {
+        return recordType;
+    }
+
+    public void setRecordType(String recordType) {
+        this.recordType = recordType;
+    }
 
     public String getCUSIP() {
         return CUSIP;
@@ -182,6 +193,22 @@ public class ETFConstituents {
 
     public void setComponentDescription(String componentDescription) {
         ComponentDescription = componentDescription;
+    }
+
+    public long getComponentPriceAmount() {
+        return ComponentPriceAmount;
+    }
+
+    public void setComponentPriceAmount(long componentPriceAmount) {
+        ComponentPriceAmount = componentPriceAmount;
+    }
+
+    public String getSecurityIssueType() {
+        return SecurityIssueType;
+    }
+
+    public void setSecurityIssueType(String securityIssueType) {
+        SecurityIssueType = securityIssueType;
     }
 
     public String getWhenIssuedIndicator() {
@@ -376,4 +403,53 @@ public class ETFConstituents {
         FutureUse = futureUse;
     }
 
+    @Override
+    public String toString() {
+        return "ETFConstituents{" +
+                "recordType='" + recordType + '\'' +
+                ", CUSIP='" + CUSIP + '\'' +
+                ", ISIN='" + ISIN + '\'' +
+                ", NSCCPortfolioID='" + NSCCPortfolioID + '\'' +
+                ", PortfolioTradeDate=" + PortfolioTradeDate +
+                ", ComponentIDCode=" + ComponentIDCode +
+                ", ComponentID='" + ComponentID + '\'' +
+                ", ComponentQuantity=" + ComponentQuantity +
+                ", SignForComponentQuantity='" + SignForComponentQuantity + '\'' +
+                ", NewSecurityIndicator='" + NewSecurityIndicator + '\'' +
+                ", CashInLieuIndicator='" + CashInLieuIndicator + '\'' +
+                ", ComponentSymbol='" + ComponentSymbol + '\'' +
+                ", ComponentWIIndicator='" + ComponentWIIndicator + '\'' +
+                ", ComponentUndergoingCorporateAction='" + ComponentUndergoingCorporateAction + '\'' +
+                ", SettlementLocation=" + SettlementLocation +
+                ", ComponentCNSIndicator='" + ComponentCNSIndicator + '\'' +
+                ", ExternalSettlementDate=" + ExternalSettlementDate +
+                ", ComponentDescription='" + ComponentDescription + '\'' +
+                ", ComponentPriceAmount=" + ComponentPriceAmount +
+                ", SecurityIssueType='" + SecurityIssueType + '\'' +
+                ", WhenIssuedIndicator='" + WhenIssuedIndicator + '\'' +
+                ", AccruedInterestNonstandardSettlement=" + AccruedInterestNonstandardSettlement +
+                ", AccruedInterestStandardSettlement=" + AccruedInterestStandardSettlement +
+                ", AssetClass='" + AssetClass + '\'' +
+                ", ExcludedFromPricing=" + ExcludedFromPricing +
+                ", Price=" + Price +
+                ", LocalCurrency='" + LocalCurrency + '\'' +
+                ", Factor=" + Factor +
+                ", SyntheticsLocalCurrency='" + SyntheticsLocalCurrency + '\'' +
+                ", SyntheticsPriceMultiplier=" + SyntheticsPriceMultiplier +
+                ", SyntheticsContractSize=" + SyntheticsContractSize +
+                ", SyntheticsAverageContractOpenPrice=" + SyntheticsAverageContractOpenPrice +
+                ", FXRatesBaseCurrency='" + FXRatesBaseCurrency + '\'' +
+                ", FXRatesCurrencies='" + FXRatesCurrencies + '\'' +
+                ", FXForwardsCurrencyPair='" + FXForwardsCurrencyPair + '\'' +
+                ", FXForwardsValueDate=" + FXForwardsValueDate +
+                ", FXForwardsQuantity=" + FXForwardsQuantity +
+                ", FXForwardsRate=" + FXForwardsRate +
+                ", FXForwardsValue=" + FXForwardsValue +
+                ", FXForwardsCurrency='" + FXForwardsCurrency + '\'' +
+                ", SWAPsNotionalValue=" + SWAPsNotionalValue +
+                ", SWAPsSpread=" + SWAPsSpread +
+                ", SWAPsMarketValue=" + SWAPsMarketValue +
+                ", FutureUse='" + FutureUse + '\'' +
+                '}';
+    }
 }
